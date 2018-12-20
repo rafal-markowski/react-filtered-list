@@ -19,16 +19,25 @@ export default class App extends React.Component {
 
     render() {
         const filteredContacts = this.state.filteredContacts;
-        
+
         return (
             <div>
                 <label className="c-filter">
                     <input type="search" className="c-filter__input" onInput={this.filterContacts} />
                 </label>
+                { this.contactList(filteredContacts) }                             
+            </div>
+        );
+    }
+
+    contactList(filteredContacts) {
+        if(filteredContacts.length > 0) {
+            return (
                 <ul className="c-contacts">
                     { filteredContacts.map(el => <li key={el} className="c-contact__item">{el}</li>) }
                 </ul>
-            </div>
-        );
+            )
+        }
+        return (<p>Nie znaleziono pasujących kontaktów</p>);
     }
 }
