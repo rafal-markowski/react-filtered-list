@@ -1,0 +1,32 @@
+.c-filter {
+    display: block;
+    margin: 10px 5px;
+
+    &__input {
+        display: inline-block;
+        width: 250px;
+        height: 35px;
+        padding: 0 5px;
+        margin-left: 10px;
+        border: 2px solid gray;
+        border-radius: 5px;
+    }
+}
+
+.c-contacts {
+    border-left: 1px solid gray;
+    padding-left: 10px;
+    list-style-type: none;
+
+    &__item {
+        padding: 5px 0;
+
+        &:first-child {
+            padding-top: 8px;
+        }
+
+        &:last-child {
+            padding-bottom: 8px;
+        }
+    }
+}

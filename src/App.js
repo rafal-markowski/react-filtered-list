@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.scss';
 
 export default class App extends React.Component {
     constructor() {
@@ -23,6 +24,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <label className="c-filter">
+                    Wyszukaj kontakt: 
                     <input type="search" className="c-filter__input" onInput={this.filterContacts} />
                 </label>
                 { this.contactList(filteredContacts) }                             
@@ -34,7 +36,7 @@ export default class App extends React.Component {
         if(filteredContacts.length > 0) {
             return (
                 <ul className="c-contacts">
-                    { filteredContacts.map(el => <li key={el} className="c-contact__item">{el}</li>) }
+                    { filteredContacts.map(el => <li key={el} className="c-contacts__item">{el}</li>) }
                 </ul>
             )
         }
